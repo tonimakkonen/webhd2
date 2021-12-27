@@ -1,0 +1,19 @@
+.Line {
+
+  font-family: monospace;
+
+  /* Note: this value combined with margins & size for this & Byte keep the
+  bytes aligned when line wrap happens*/
+  min-width: 6.75rem;
+
+  margin: 0.25rem;
+  padding: 0.25rem;
+
+  text-align: center;
+
+  display:inline-block;
+
+  border: solid;
+  border-width: thin;
+
+}
