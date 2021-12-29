@@ -1,5 +1,5 @@
 import React from 'react';
-import Select from 'react-select'
+
 import Byte from './Byte.js'
 import Line from './Line.js'
 import './Viewer.css';
@@ -22,7 +22,7 @@ class Viewer extends React.Component {
       }
 
       // We always push the current byte to the values
-      bytes.push(<Byte value={value} index={i} linenumber={lineNumber} key={"byte"+i} />);
+      bytes.push(<Byte value={value} index={i} linenumber={lineNumber} key={"byte"+i} data-tip="VITTU"/>);
 
       // TODO: Hanlde cases where line end is marked by \n\r
       if (value === 10 || value === 13) {
@@ -32,17 +32,11 @@ class Viewer extends React.Component {
         bytes.push(<Line lineNumber={lineNumber} index={i} key={"line"+lineNumber} />);
       }
     }
+
     return bytes;
   }
 
   render() {
-
-    const options = [
-    { value: 'chocolate', label: 'Chocolate' },
-    { value: 'strawberry', label: 'Strawberry' },
-    { value: 'vanilla', label: 'Vanilla' }
-  ]
-
     if (!this.props.fileLoaded) {
       return (
         <div className="Viewer">
@@ -54,7 +48,6 @@ class Viewer extends React.Component {
         <div className="Viewer">
         <div className="text">File: {this.props.filePath}</div>
         <div className="text">Size in bytes: {this.props.fileData.length}</div>
-        <Select options={options} />
         <hr/>
         {this.createDisplayData()}
         </div>
