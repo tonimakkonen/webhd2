@@ -16,3 +16,16 @@
     border-width: thin;
 
 }
+
+.Byte .tooltiptext {
+  visibility: hidden;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  position: absolute;
+  z-index: 1;
+}
+
+.Byte:hover .tooltiptext {
+  visibility: visible;
+}

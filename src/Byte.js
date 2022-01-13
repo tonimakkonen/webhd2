@@ -10,6 +10,7 @@ class Byte extends React.Component {
       binary: this.getBinary(this.props.value),
       ascii: this.getAscii(this.props.value),
       hex: this.getHex(this.props.value),
+      bytenumber: this.props.bytenumber
     };
   }
 
@@ -42,7 +43,7 @@ class Byte extends React.Component {
   }
 
   getBgColor(value) {
-    // White space characters
+    // ASCII white space characters
     if (value === 9 || value === 10 || value === 11 || value === 12 ||
       value === 13 || value === 32) {
         return "#ffffff";
@@ -62,6 +63,7 @@ class Byte extends React.Component {
   render() {
     return (
       <div className="Byte" style={{backgroundColor:this.getBgColor(this.props.value)}}>
+      <span class="tooltiptext">{this.state.binary}</span>
       {this.state.ascii}
       <br />
       {this.state.hex}

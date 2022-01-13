@@ -22,7 +22,7 @@ class Viewer extends React.Component {
       }
 
       // We always push the current byte to the values
-      bytes.push(<Byte value={value} index={i} linenumber={lineNumber} key={"byte"+i} data-tip="VITTU"/>);
+      bytes.push(<Byte value={value} bytenumber={i} index={i} linenumber={lineNumber} key={"byte"+i} />);
 
       // TODO: Hanlde cases where line end is marked by \n\r
       if (value === 10 || value === 13) {
