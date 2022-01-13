@@ -1,6 +1,5 @@
 {
   "name": "webhd",
-  "homepage": "https://tonimakkonen.github.io/webhd/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
